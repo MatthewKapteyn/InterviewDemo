@@ -3,6 +3,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <p>Hello World</p>
+    <script>
+        function OpenNewPage() {
+            window.open('NewPage.aspx', 'NewPage');
+            this.window.close();
+        }
+        $(function GetFormData() {
+            var name = /\w+$/.exec(document.getElementById("div1").innerHTML = window.location.search);
+            $('#div1').text(name);
+        });
+    </script>
 
+    <h1>Default Page</h1>
+    <asp:Button ID="btnOpenNew" runat="server" OnClientClick="OpenNewPage()" Text="Open New Page"/>
+    <br /><br />
+    <label>Text from the new page: </label>
+    <label id="div1"></label>
 </asp:Content>
